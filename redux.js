@@ -9,32 +9,36 @@ const initialState = {
 
 //bikin reducer
 const rootReducer = (state = initialState, action) => {
-    console.log(action)
-    if(action.type === 'ADD_VALUE'){
-        return {
-            ...state,
-            value: state.value + 1
-        }
+    switch(action.type){
+        case 'ADD_VALUE':
+            return {
+                ...state,
+                value: state.value + 1
+            }
+        case 'ADD_VALUE2':
+            return {
+                ...state,
+                value2: state.value2 + action.newValue
+            }
+        default:
+            return state
     }
-    if(action.type === 'ADD_VALUE2'){
-        return {
-            ...state,
-        value2: state.value2 + action.newValue
-        }
-    }
-    return state;
 
 }
 
-//bikin store
+// 1.bikin store
 const store = createStore(rootReducer);
 console.log(store.getState())
+
+//subscribe
+store.subscribe(() => {
+    console.log('store change :', store.getState())
+})
 
 //dispatching
 store.dispatch({
     type:'ADD_VALUE'
 })
-
 store.dispatch({
     type:'ADD_VALUE2',
     newValue:12
