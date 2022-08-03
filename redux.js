@@ -13,7 +13,13 @@ const rootReducer = (state = initialState, action) => {
     if(action.type === 'ADD_VALUE'){
         return {
             ...state,
-            value2: state.value2 + 1
+            value: state.value + 1
+        }
+    }
+    if(action.type === 'ADD_VALUE2'){
+        return {
+            ...state,
+        value2: state.value2 + action.newValue
         }
     }
     return state;
@@ -29,6 +35,9 @@ store.dispatch({
     type:'ADD_VALUE'
 })
 
+store.dispatch({
+    type:'ADD_VALUE2',
+    newValue:12
+})
+
 console.log(store.getState())
-
-
