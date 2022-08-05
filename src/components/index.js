@@ -1,3 +1,4 @@
 import Header from "./header";
+import ChHeader from "./childHeader";
 
-export {Header}
+export {Header, ChHeader}

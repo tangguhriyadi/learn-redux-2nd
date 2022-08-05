@@ -1,8 +1,12 @@
 import React from 'react'
+import { ChHeader } from '../components'
 
 const Child = () => {
   return (
-    <div>ini Child</div>
+    <>
+    <ChHeader />
+    </>
+    
   )
 }
 
