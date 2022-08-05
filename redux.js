@@ -1,13 +1,13 @@
 const redux = require('redux')
 const createStore = redux.createStore
 
-// global state
+//2.2 global state
 const initialState = {
     value:1,
     value2:2
 }
 
-//bikin reducer
+//2.1 bikin reducer
 const rootReducer = (state = initialState, action) => {
     switch(action.type){
         case 'ADD_VALUE':
@@ -30,12 +30,12 @@ const rootReducer = (state = initialState, action) => {
 const store = createStore(rootReducer);
 console.log(store.getState())
 
-//subscribe
+//4. subscribe
 store.subscribe(() => {
     console.log('store change :', store.getState())
 })
 
-//dispatching
+//3. dispatching / execution
 store.dispatch({
     type:'ADD_VALUE'
 })
