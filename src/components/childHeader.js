@@ -1,13 +1,15 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { increment, decrement } from '../action'
 
 const ChHeader = () => {
   const counter = useSelector(state => state.counter)
+  const dispatch = useDispatch()
   return (
     <>
     <div>this is {counter}</div>
-    <button>+</button>
-    <button>-</button>
+    <button onClick={() => {dispatch(increment())}}>+</button>
+    <button onClick={() => {dispatch(decrement())}}>-</button>
     </>
   )
 }
