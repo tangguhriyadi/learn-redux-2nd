@@ -5,26 +5,19 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
+import allReducers from './reducer'
 
-const globalState = {
-  value1:1,
-  value2:2
-}
-
-// reducer
-const rootReducer = (state = globalState, action) => {
-  return state;
-}
-
-// Store
-const store = createStore(rootReducer);
+const store = createStore(
+  allReducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
+   {/*  <Provider> */}
       <App />
-    </Provider>
+    {/* </Provider> */}
   </React.StrictMode>
 );
 
