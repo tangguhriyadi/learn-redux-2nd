@@ -16,7 +16,7 @@ const store = createStore(
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Provider store={store}> {/* bungkung dgn provider */}
+    <Provider store={store}> {/* bungkus dgn provider */}
       <App />
     </Provider>
   </React.StrictMode>

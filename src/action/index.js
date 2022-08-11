@@ -13,3 +13,8 @@ export const isLogged = () => {
         type:'SIGN_IN'
     }
 }
+export const showAlert = () => {
+    return{
+        type:'SHOW_ALERT'
+    }
+}
